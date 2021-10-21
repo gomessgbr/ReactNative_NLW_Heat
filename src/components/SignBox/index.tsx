@@ -2,12 +2,17 @@ import React from 'react';
 
 import {  View } from 'react-native';
 
+import { useAuth } from '../../hooks/auth'
+
 import { Button } from '../Button'
 import { COLORS } from '../../theme';
 
 import { styles } from './styles';
 
 export function SignBox(){
+
+  const { signIn, isSigninging } =useAuth();
+
   return (
     <View style={styles.container}>
         <Button
@@ -15,6 +20,8 @@ export function SignBox(){
             color={COLORS.BLACK_PRIMARY}
             backgroundColor={COLORS.YELLOW}
             icon= 'github'
+            onPress={signIn}
+            isLoading={isSigninging}
             
         />
 
