@@ -8,8 +8,10 @@ import { UserPhoto }  from '../UserPhoto'
 import { styles } from './styles';
 
 import LogoSvg from '../../assets/logo.svg';
+import { useAuth } from '../../hooks/auth';
 
-export function Header(){
+export function Header() {
+  const {user} = useAuth();
   return (
     <View style={styles.container}>
       <LogoSvg/>
@@ -21,7 +23,7 @@ export function Header(){
           </Text>
         </TouchableOpacity>
 
-        <UserPhoto imageUri ='https://github.com/gomessgbr.png'/>
+        <UserPhoto imageUri ={user?.avatar_url}/>
       </View>
 
       
