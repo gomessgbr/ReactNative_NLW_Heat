@@ -48,9 +48,9 @@ export function MessageList(){
       contentContainerStyle={styles.content}
       keyboardShouldPersistTaps="never"
     >
-        {currentMessages.map((message)=>{
-          <Message key={message.id} data={message}/>
-        })}
+        {
+          currentMessages.map((message) => <Message key={message.id} data={message}/>
+        )}
         
         
     </ScrollView>
