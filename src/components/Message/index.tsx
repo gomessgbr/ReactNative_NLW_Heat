@@ -21,7 +21,7 @@ type Props = {
     data: MessageProps
 }
 
-export function Message({ data }: Props){
+export function Message({ data }: Props){    
   return (
     <MotiView 
         from={{ opacity:0, translateY: -50}}
